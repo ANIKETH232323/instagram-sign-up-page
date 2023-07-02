@@ -5,13 +5,13 @@ import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
+
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
-import androidx.compose.foundation.layout.fillMaxSize
+
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -22,10 +22,9 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Divider
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Icon
-import androidx.compose.material3.MaterialTheme
+
 import androidx.compose.material3.OutlinedTextField
-import androidx.compose.material3.Surface
+
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
@@ -40,7 +39,6 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.login_page.ui.theme.LoginPageTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -51,17 +49,16 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Disp(){
-
     Column (Modifier.fillMaxWidth(),
         horizontalAlignment = Alignment.CenterHorizontally){
-        Image(painter = painterResource(R.drawable.img_1),
-            contentDescription ="Top Logo",
-            Modifier.size(130.dp)
+        Spacer(modifier = Modifier.size(25.dp))
+        Image(painter = painterResource(R.drawable.r),
+            contentDescription ="Top Logo"
         )
+        Spacer(modifier = Modifier.size(20.dp))
         Text(text = "Sign up to see photos and videos \n " +
                 "from Your friends.",
             fontSize = 21.sp,
@@ -73,7 +70,7 @@ fun Disp(){
         Button(
             onClick = { Toast.makeText(context,"Hello",Toast.LENGTH_SHORT).show()},
             Modifier
-                .width(width = 350.dp)
+                .width(width = 340.dp)
                 .height(height = 45.dp),
             colors = ButtonDefaults.buttonColors(
                 Color.Blue
@@ -109,14 +106,14 @@ fun Disp(){
             color = Color.Black,
             modifier = Modifier
                 .width(width = 180.dp)
-                .padding(top = 265.dp, start = 28.dp, end = 15.dp)
+                .padding(top = 230.dp, start = 28.dp, end = 15.dp)
         )
 
         Divider(thickness = 1.dp,
             color = Color.Black,
             modifier = Modifier
                 .width(width = 180.dp)
-                .padding(top = 265.dp, end = 28.dp, start = 15.dp)
+                .padding(top = 230.dp, end = 28.dp, start = 15.dp)
         )
 
 
@@ -127,10 +124,11 @@ fun Disp(){
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        Spacer(modifier = Modifier.size(245.dp))
+        Spacer(modifier = Modifier.size(180.dp))
         val te = remember {
             mutableStateOf("")
         }
+
         OutlinedTextField(
             modifier = Modifier
                 .width(width = 340.dp),
@@ -195,7 +193,7 @@ fun Disp(){
         Button(
             onClick = {Toast.makeText(context1,"Successful",Toast.LENGTH_SHORT).show()},
             Modifier
-                .width(width = 350.dp)
+                .width(width = 340.dp)
                 .height(height = 45.dp),
             colors = ButtonDefaults.buttonColors(
                 Color.Blue
